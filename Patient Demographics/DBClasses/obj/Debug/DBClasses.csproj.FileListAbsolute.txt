@@ -1,0 +1,6 @@
+C:\Users\Vinutha Vivek\Documents\Patient\Patient Demographics\DBClasses\obj\Debug\DBClasses.csprojAssemblyReference.cache
+C:\Users\Vinutha Vivek\Documents\Patient\Patient Demographics\DBClasses\obj\Debug\DBClasses.csproj.CoreCompileInputs.cache
+C:\Users\Vinutha Vivek\Documents\Patient\Patient Demographics\DBClasses\bin\Debug\DBClasses.dll
+C:\Users\Vinutha Vivek\Documents\Patient\Patient Demographics\DBClasses\bin\Debug\DBClasses.pdb
+C:\Users\Vinutha Vivek\Documents\Patient\Patient Demographics\DBClasses\obj\Debug\DBClasses.dll
+C:\Users\Vinutha Vivek\Documents\Patient\Patient Demographics\DBClasses\obj\Debug\DBClasses.pdb

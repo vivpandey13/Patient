@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="PatientSchema"
+    targetNamespace="http://tempuri.org/PatientSchema.xs"
+    elementFormDefault="qualified"
+    xmlns="http://tempuri.org/PatientSchema.xsd"
+    xmlns:mstns="http://tempuri.org/PatientSchema.xsd"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  >
+
+  
+  <xs:simpleType name="Gender" final="restriction" >
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Male" />
+      <xs:enumeration value="Gender" />
+      <xs:enumeration value="X" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ContactType" final="restriction">
+    <xs:sequence>
+      <xs:element name="Name"   type="xs:int"/>
+      <xs:element name="Number" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="PatientType">
+    <xs:sequence>
+      <xs:element name="ID"   type="xs:int"/>
+      <xs:element name="ForeName" type="xs:string"/>
+      <xs:element name="SurName"   type="xs:string"/>
+      
+    </xs:sequence>
+   
+  </xs:complexType>
+  
+  
+</xs:schema>

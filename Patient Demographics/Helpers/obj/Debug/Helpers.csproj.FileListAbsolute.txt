@@ -1,0 +1,9 @@
+C:\Users\Vinutha Vivek\Documents\Patient\Patient Demographics\Helpers\bin\Debug\Helpers.dll
+C:\Users\Vinutha Vivek\Documents\Patient\Patient Demographics\Helpers\bin\Debug\Helpers.pdb
+C:\Users\Vinutha Vivek\Documents\Patient\Patient Demographics\Helpers\bin\Debug\DBClasses.dll
+C:\Users\Vinutha Vivek\Documents\Patient\Patient Demographics\Helpers\bin\Debug\DBClasses.pdb
+C:\Users\Vinutha Vivek\Documents\Patient\Patient Demographics\Helpers\obj\Debug\Helpers.csprojAssemblyReference.cache
+C:\Users\Vinutha Vivek\Documents\Patient\Patient Demographics\Helpers\obj\Debug\Helpers.csproj.CoreCompileInputs.cache
+C:\Users\Vinutha Vivek\Documents\Patient\Patient Demographics\Helpers\obj\Debug\Helpers.csproj.CopyComplete
+C:\Users\Vinutha Vivek\Documents\Patient\Patient Demographics\Helpers\obj\Debug\Helpers.dll
+C:\Users\Vinutha Vivek\Documents\Patient\Patient Demographics\Helpers\obj\Debug\Helpers.pdb
