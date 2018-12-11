@@ -2,7 +2,7 @@
 app.controller('myCtrl', ['$scope', '$http', function ($scope,$http) {
     var baseUrl = 'http://localhost:63971/api/';
     $scope.patientDetailsModel = this;
-    $scope.patientDetailsModel.phoneTypes = ['Home', 'Work', 'Mobile', 'Extension', 'Fax'];
+    $scope.patientDetailsModel.phoneTypes = ['Home', 'Work', 'Mobile'];
     $scope.patientDetailsModel.ContactInfoData = {};
     $scope.patientDetailsModel.ContactInfoData.Contact = {};
     $scope.patientDetailsModel.ContactInfoData.Contact.Phones = [];
