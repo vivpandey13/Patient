@@ -8,12 +8,23 @@ using System.Threading.Tasks;
 
 namespace Helpers
 {
-    public class PatientDemoHelper
+    public interface IPatientDemoHelper
+    {
+        Patient GetPatient(int id);
+        void SavePatient(Patient patient);
+        List<Patient> GetPatients();
+
+    }
+    public class PatientDemoHelper: IPatientDemoHelper
     {
         IPatientDemo_DAO _DAO ;
         public PatientDemoHelper()
         {
-            _DAO = new PatientDemo_DAO();
+
+        }
+        public PatientDemoHelper(IPatientDemo_DAO dao)
+        {
+            _DAO = dao;
         }
         public Patient GetPatient(int id)
         {
@@ -22,7 +33,7 @@ namespace Helpers
             return patient;
         }
 
-        public List<Patient> Patients()
+        public List<Patient> GetPatients()
         {
             List<Patient> patients = new List<Patient>();
             patients = _DAO.GetPatients();

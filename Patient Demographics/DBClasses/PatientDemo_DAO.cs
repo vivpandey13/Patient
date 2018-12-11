@@ -114,14 +114,21 @@ namespace DBClasses
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string queryString = "Insert into  dbo.PatientInfo (ID,Data) Values (@ID, @Data)";
-
+                    string query = "SELECT IDENT_CURRENT( 'PatientInfo' )";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    connection.Open();
+                    var id =command.ExecuteScalar();
+                    int identity = Convert.ToInt32(id);
+                    patient.ID = identity == 0 ? 0 : identity + 1;
+                    string queryString = "Insert into  dbo.PatientInfo (Data) Values ( @Data)";
+                    
+                    
                     // Create the Command and Parameter objects.
-                    SqlCommand command = new SqlCommand(queryString, connection);
-                    command.Parameters.AddWithValue("@ID", patient.ID);
+                    command = new SqlCommand(queryString, connection);
+                    
                     command.Parameters.AddWithValue("@Data", PatientToXML(patient));
                     command.CommandType = CommandType.Text;
-                    connection.Open();
+                    
                     command.ExecuteNonQuery();
 
                 }
@@ -139,11 +146,11 @@ namespace DBClasses
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string queryString = "Update dbo.PatientInfo  set ID =@ID,Data= @Data where ID=@ID";
+                    string queryString = "Update dbo.PatientInfo  set Data= @Data where ID=@ID";
                     // Create the Command and Parameter objects.
                     SqlCommand command = new SqlCommand(queryString, connection);
 
-                    command.Parameters.AddWithValue("@ID", patient.ID);
+                    
                     command.Parameters.AddWithValue("@Data", PatientToXML(patient));
                     command.CommandType = CommandType.Text;
                     connection.Open();

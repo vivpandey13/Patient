@@ -1,4 +1,5 @@
-﻿using Helpers;
+﻿using DBClasses;
+using Helpers;
 using Patient_Demographics.Models;
 using System;
 using System.Collections.Generic;
@@ -11,25 +12,18 @@ namespace Patient_Demographics.Controllers
 {
     public class ValuesController : ApiController
     {
-        List<Patient> patients = new List<Patient>();
-        public ValuesController()
+        IPatientDemoHelper patientDemoHelper;
+        IPatientDemo_DAO patientDemo_DAO;
+        
+        public ValuesController(IPatientDemo_DAO DAO ,IPatientDemoHelper helper)
         {
-            //List<Contact> contacts = new List<Contact>();
-            //Contact homePhone = new Contact()
-            //{
-            //    ContactType = EnumContact.Home,
-            //    Number = "1234567890"
-            //};
-            //contacts.Add(homePhone);
-            //Patient patient = new Patient(patients.Count+1,"Mike", "Hussy", DateTime.Today.ToShortDateString(), EnumGender.Male, contacts);
-            //patients.Add(patient);
+            patientDemo_DAO = DAO;
+            patientDemoHelper = helper;
         }
         // GET api/values
         public List<Patient> Get()
         {
-            PatientDemoHelper helper = new PatientDemoHelper();
-
-            return helper.Patients();
+            return patientDemoHelper.GetPatients();
         }
 
         // GET api/values/5
@@ -41,8 +35,8 @@ namespace Patient_Demographics.Controllers
         // POST api/values
         public void Post([FromBody]Patient patient)
         {
-            PatientDemoHelper helper = new PatientDemoHelper();
-            helper.SavePatient(patient);
+            
+            patientDemoHelper.SavePatient(patient);
         }
 
         // PUT api/values/5
