@@ -9,7 +9,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script type="text/javascript" src="~/Scripts/Details.js"></script>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm(null, null, FormMethod.Get, new { name = "myform", id = "frm" }))
 {
     @Html.AntiForgeryToken()
 
@@ -21,14 +21,15 @@
 
         <label title="ForeName" class="control-label col-md-2">ForeName</label>
         <div class="col-md-10">
-            <input class="form-control" type="text" ng-model="patientDetailsModel.ForeName" />
+            <input class="form-control" name="foreName" type="text" ng-required="true" ng-model="patientDetailsModel.ForeName" />
+            <span ng-show="!myform.foreName.$valid" >The input field cannot be empty</span>
         </div>
     </div>
 
     <div class="form-group">
         <label title="ForeName" class="control-label col-md-2">Sur Name</label>
         <div class="col-md-10">
-            <input class="form-control" type="text" ng-model="patientDetailsModel.SurName" />
+            <input class="form-control" type="text" ng-required="true" ng-model="patientDetailsModel.SurName" />
         </div>
     </div>
     <div class="form-group">
@@ -41,7 +42,7 @@
         <label title="Contact type" class="control-label col-md-2">Gender</label>
         <div class="col-md-2">
             <select ng-model="gender" class="form-control" ng-options="v as v for v in patientDetailsModel.gender"
-                    ng-class="{'error':phone.typeError!=null}" style="display:inline-block">
+                    ng-class="{'error':phone.typeError!=null}"  ng-required="true" style="display:inline-block">
                 <option value='' disabled selected>Type</option>
             </select>
         </div>

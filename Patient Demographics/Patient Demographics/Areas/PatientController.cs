@@ -33,8 +33,6 @@ namespace Patient_Demographics.Areas
                 }
                 else
                 {
-
-
                     patients = new List<Patient>();
                 }
             }
@@ -81,6 +79,7 @@ namespace Patient_Demographics.Areas
             }
             catch(Exception ex)
             {
+                ModelState.AddModelError(string.Empty, "An error has occurred while saving the details");
                 return View();
             }
         }

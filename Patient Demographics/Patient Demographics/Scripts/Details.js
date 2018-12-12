@@ -20,6 +20,12 @@ app.controller('myCtrl', ['$scope', '$http', function ($scope,$http) {
         $scope.patientDetailsModel.ContactInfoData.Contact.Phones.push(ph);
 
     };
+    var successCallback = function () {
+        window.location.href = "http://localhost:63971/Patient";
+    };
+    var errorCallback = function () {
+        window.location.href = "http://localhost:63971/Error/Index";
+    };
     $scope.patientDetailsModel.savePatient  = function () {
         var patient = {
             ForeName: $scope.patientDetailsModel.ForeName,
@@ -33,7 +39,7 @@ app.controller('myCtrl', ['$scope', '$http', function ($scope,$http) {
             method: 'POST',
             url: apiRoute,
             data: patient
-        });
+        }).then(successCallback, errorCallback);
 
 
     };
